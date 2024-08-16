@@ -169,7 +169,7 @@ CreateGui = function()
     NewGuiPart2.Name = "PropertiesFrame"
     NewGuiPart2.Parent = NewGuiPart1
     NewGuiPart2.Active = true
-    NewGuiPart2.BackgroundColor3 = Color3.fromRGB(30,30,30)
+    NewGuiPart2.BackgroundColor3 = Color3.new(1, 1, 1)
     NewGuiPart2.BackgroundTransparency = 0.10000000149012
     NewGuiPart2.BorderColor3 = Color3.new(0.74902, 0.74902, 0.74902)
     NewGuiPart2.Position = UDim2.new(1, 0, 0.5, 36)
@@ -1282,7 +1282,7 @@ CreateGui = function()
     NewGuiPart109.ZIndex = 2
     NewGuiPart109.Font = Enum.Font.SourceSansBold
     NewGuiPart109.FontSize = Enum.FontSize.Size28
-    NewGuiPart109.Text = "Raspberry Pi , Script Made By Advancedev"
+    NewGuiPart109.Text = "DDEV 3.5, Made by Zarto"
     NewGuiPart109.TextWrapped = true
     
     NewGuiPart110.Name = "Slant"
@@ -2028,7 +2028,7 @@ CreateGui = function()
     
         function archivable(root)
             for i,v in pairs(root:GetChildren()) do
-                if not game:GetService("Players"):GetPlayerFromCharacter(v) then
+                if not game.Players:GetPlayerFromCharacter(v) then
                     v.Archivable = true
                     archivable(v)
                 end
@@ -3499,7 +3499,7 @@ CreateGui = function()
     end
     
     function CreateInsertObjectMenu(choices, currentChoice, readOnly, onClick)
-        local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+        local mouse = game.Players.LocalPlayer:GetMouse()
         local totalSize = explorerPanel.Parent.AbsoluteSize.y
         if #choices == 0 then return end
         
@@ -3588,7 +3588,7 @@ CreateGui = function()
     end
     
     function CreateFunctionCallerMenu(choices, currentChoice, readOnly, onClick)
-        local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+        local mouse = game.Players.LocalPlayer:GetMouse()
         local totalSize = explorerPanel.Parent.AbsoluteSize.y
         if #choices == 0 then return end
         
@@ -3768,7 +3768,7 @@ CreateGui = function()
     end
     
     function CreateRightClickMenu(choices, currentChoice, readOnly, onClick)
-        local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+        local mouse = game.Players.LocalPlayer:GetMouse()
     
         local frame = Instance.new("Frame")	
         frame.Name = "DropDown"
@@ -3850,7 +3850,7 @@ CreateGui = function()
     
     function checkMouseInGui(gui)
         if gui == nil then return false end
-        local plrMouse = game:GetService("Players").LocalPlayer:GetMouse()
+        local plrMouse = game.Players.LocalPlayer:GetMouse()
         local guiPosition = gui.AbsolutePosition
         local guiSize = gui.AbsoluteSize	
         
@@ -4535,7 +4535,7 @@ CreateGui = function()
     end
     
     function rightClickMenu(sObj)
-        local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+        local mouse = game.Players.LocalPlayer:GetMouse()
         
         currentRightClickMenu = CreateRightClickMenu(
             {"Cut","Copy","Paste Into","Duplicate","Delete","Group","Ungroup","Select Children","Teleport To","Insert Part","Insert Object","View Script","Save Instance","Call Function","Call Remote"},
@@ -4630,7 +4630,7 @@ CreateGui = function()
                     for i = 1,#list do
                         if list[i]:IsA("BasePart") then
                             pcall(function()
-                                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = list[i].CFrame
+                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = list[i].CFrame
                             end)
                             break
                         end
@@ -4643,7 +4643,7 @@ CreateGui = function()
                         pcall(function()
                             local newPart = Instance.new("Part")
                             newPart.Parent = list[i]
-                            newPart.CFrame = CFrame.new(game:GetService("Players").LocalPlayer.Character.Head.Position) + Vector3.new(0,3,0)
+                            newPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.Head.Position) + Vector3.new(0,3,0)
                             table.insert(insertedParts,newPart)
                         end)
                     end
@@ -7714,7 +7714,7 @@ CreateGui = function()
     }
     
     local userInput = game:GetService("UserInputService")
-    local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+    local mouse = game.Players.LocalPlayer:GetMouse()
     
     local topBar = top:WaitForChild("TopBar")
     local scriptBar = topBar:WaitForChild("ScriptBar")
@@ -8355,7 +8355,7 @@ CreateGui = function()
     
     function checkMouseInGui(gui)
         if gui == nil then return false end
-        local plrMouse = game:GetService("Players").LocalPlayer:GetMouse()
+        local plrMouse = game.Players.LocalPlayer:GetMouse()
         local guiPosition = gui.AbsolutePosition
         local guiSize = gui.AbsoluteSize	
         
